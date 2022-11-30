@@ -13,4 +13,8 @@ https://youtu.be/h2lGPoxbG5w
 ## Wofür das Repo?
 Hier möchte ich meine Lösungen dokumentieren. Ich schätze, dass die Zeit kommen wird in der man sie mit Anderen vergleicht und schaut wie einige Dinge eleganter gelöst worden wären. 
 
+Aber Spoiler Bedingung aus FAQ beachten:
+![image](https://user-images.githubusercontent.com/1297475/204887306-fc49f935-74f8-4203-84cb-22785cdf069e.png)
+
+
 So happy coding - morgen gehts los.
