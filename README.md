@@ -4,7 +4,7 @@ Mein Advent of Code Repo - hier werde ich meine Lösungen dokumentieren.
 ## Worum gehts?
 Es geht um diese Webseite: https://adventofcode.com/
 
-Dort werden jedes Jahr ab dem 1. Advent Programmierrätsel veröffentlicht und man kann versuchen diese zu lösen. Obs ne Belohnung gibt weiß ich nicht, ich vermute, man wird auf einer Besten Liste unter Platz unendlich weit unten gerankt :) Aber das kann man ja ändern :)
+Dort werden jedes Jahr ab dem 1. Dezember Programmierrätsel veröffentlicht und man kann versuchen diese zu lösen. Obs ne Belohnung gibt weiß ich nicht, ich vermute, man wird auf einer Besten Liste unter Platz unendlich weit unten gerankt :) Aber das kann man ja ändern :)
 
 ## Wie funktioniert es?
 Eine kleine Einführung gibt es hier. Für mich war sie gut verständlich - daher DRY Prinzip und einfach verlinkt:
