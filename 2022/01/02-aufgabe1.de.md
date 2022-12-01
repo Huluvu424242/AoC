@@ -17,6 +17,7 @@ Eine wichtige Überlegung ist das Essen – insbesondere die Anzahl der Kalorien
 Die Elfen schreiben abwechselnd die Anzahl der Kalorien auf, die die verschiedenen Mahlzeiten, Snacks, Rationen usw. enthalten, die sie mitgebracht haben, ein Element pro Zeile. Jeder Elb trennt sein eigenes Inventar vom Inventar des vorherigen Elben (falls vorhanden) durch eine Leerzeile.
 
 Nehmen wir zum Beispiel an, die Elfen schreiben die Kalorien ihrer Gegenstände fertig und erhalten am Ende die folgende Liste:
+```
 
 1000
 2000
@@ -32,6 +33,7 @@ Nehmen wir zum Beispiel an, die Elfen schreiben die Kalorien ihrer Gegenstände 
 9000
 
 10000
+```
 Diese Liste stellt die Kalorien des Essens dar, das von fünf Elfen getragen wird:
 
 Der erste Elf trägt Essen mit 1000, 2000 und 3000 Kalorien, insgesamt 6000 Kalorien.
