@@ -1,4 +1,5 @@
 Kalorienzählen ---
+
 Rentiere des Weihnachtsmanns essen normalerweise normales Rentierfutter, aber sie brauchen viel magische Energie, um Geschenke an Weihnachten zu liefern. 
 Dafür ist ihr Lieblingssnack eine besondere Art von Sternfrucht, die nur tief im Dschungel wächst.
 Die Elfen haben dich auf ihrer jährlichen Expedition zu dem Hain gebracht, wo die Früchte wachsen.
