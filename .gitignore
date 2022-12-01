@@ -1,1 +1,10 @@
-/.idea
+.idea/
+target/
+debug/
+release/
+rls/
+*.o
+.vscode/
+*.iml
+
+
