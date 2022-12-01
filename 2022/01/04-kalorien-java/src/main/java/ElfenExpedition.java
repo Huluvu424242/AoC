@@ -50,12 +50,11 @@ public class ElfenExpedition {
         final List<Elf> elfen = this.elfenMap.entrySet().stream()
             .map(entry -> new Elf(entry.getKey(), entry.getValue()))
             .map(entry->{System.out.println(entry);return entry;})
-            .toList();
-       final List<Elf> sortierteElfenliste = elfen.stream().sorted(Comparator.comparingInt(o -> o.cal)).toList();
+            .sorted(Comparator.comparingInt(o -> o.cal)).toList();
 
-        final Elf firstElf = sortierteElfenliste.get(sortierteElfenliste.size()-1);
-        final Elf secondElf = sortierteElfenliste.get(sortierteElfenliste.size()-2);
-        final Elf thirdElf = sortierteElfenliste.get(sortierteElfenliste.size()-3);
+        final Elf firstElf = elfen.get(elfen.size()-1);
+        final Elf secondElf = elfen.get(elfen.size()-2);
+        final Elf thirdElf = elfen.get(elfen.size()-3);
         System.out.format("\n\nDer Elf mit den meisten Kalorien ist Elf Nr: %d mit %d Kalorien",firstElf.nr,firstElf.cal);
         System.out.format("\n\nDer Elf mit den meisten Kalorien ist Elf Nr: %d mit %d Kalorien",secondElf.nr,secondElf.cal);
         System.out.format("\n\nDer Elf mit den meisten Kalorien ist Elf Nr: %d mit %d Kalorien",thirdElf.nr,thirdElf.cal);
