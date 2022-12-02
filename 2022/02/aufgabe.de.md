@@ -24,3 +24,19 @@ Die dritte Runde ist ein Unentschieden, bei dem beide Spieler Schere wählen, wa
 Wenn Sie in diesem Beispiel dem Strategieleitfaden folgen würden, würden Sie eine Gesamtpunktzahl von 15 (8 + 1 + 6) erhalten.
 
 Wie hoch wäre Ihre Gesamtpunktzahl, wenn alles genau nach Ihrem Strategieleitfaden läuft?
+
+Ihre Rätselantwort war 13565.
+
+Die erste Hälfte dieses Puzzles ist fertig! Es bietet einen goldenen Stern: *
+
+--- Zweiter Teil ---
+Der Elf hat mit dem Zelt fertiggeholfen und schleicht sich zu dir zurück. „Jedenfalls sagt die zweite Spalte, wie die Runde enden muss: X bedeutet, dass du verlieren musst, Y bedeutet, dass du die Runde unentschieden beenden musst, und Z bedeutet, dass du gewinnen musst. Viel Glück!“
+
+Die Gesamtpunktzahl wird immer noch auf die gleiche Weise berechnet, aber jetzt müssen Sie herausfinden, welche Form Sie wählen müssen, damit die Runde wie angegeben endet. Das obige Beispiel geht jetzt so:
+
+In der ersten Runde wählt dein Gegner Rock (A) und du musst die Runde unentschieden beenden (Y), also wählst du auch Rock. Daraus ergibt sich eine Punktzahl von 1 + 3 = 4.
+In der zweiten Runde wählt dein Gegner Papier (B) und du wählst Stein, also verlierst du (X) mit einer Punktzahl von 1 + 0 = 1.
+In der dritten Runde besiegst du die Schere deines Gegners mit Rock für eine Punktzahl von 1 + 6 = 7.
+Jetzt, da Sie den streng geheimen Strategieleitfaden korrekt entschlüsseln, erhalten Sie eine Gesamtpunktzahl von 12.
+
+Befolgen Sie die Anweisungen des Elfen für die zweite Spalte, wie hoch wäre Ihre Gesamtpunktzahl, wenn alles genau nach Ihrem Strategieleitfaden läuft?
