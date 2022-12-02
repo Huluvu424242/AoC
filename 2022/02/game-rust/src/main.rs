@@ -12,7 +12,7 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 
 
 fn main() {
-    if let Ok(lines) = read_lines("src/demo-input.txt") {
+    if let Ok(lines) = read_lines("src/input.txt") {
         //println!("===lines: {:?}", lines);
         spielen(lines);
     } else {
@@ -21,8 +21,8 @@ fn main() {
 }
 
 fn spielen(lines: io::Lines<io::BufReader<File>>) {
-    let mut points_left_elf = 0;
-    let mut points_right_elf = 0;
+    let mut points_left_elf:u64 = 0;
+    let mut points_right_elf:u64 = 0;
     // // aktueller Durchlauf
     let mut cur_left_elf = "";
     let mut cur_right_elf = "";
@@ -51,8 +51,8 @@ X für Stein, Y für Papier und Z für Schere
 1 für Stein, 2 für Papier und 3 für Schere
 (0, wenn Sie verloren haben, 3, wenn die Runde unentschieden war , und 6 wenn du gewonnen hast)
  */
-fn punkte_berechnen(left_elf: &str, right_elf: &str) -> [u8; 2] {
-    let mut points: [u8; 2] = [0, 0]; // default
+fn punkte_berechnen(left_elf: &str, right_elf: &str) -> [u64; 2] {
+    let mut points: [u64; 2] = [0, 0]; // default
     // beide Stein
     if left_elf == "A" && right_elf == "X" {
         points = [1 + 3, 1 + 3];
