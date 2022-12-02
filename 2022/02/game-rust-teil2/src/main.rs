@@ -12,7 +12,7 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 
 
 fn main() {
-    if let Ok(lines) = read_lines("src/input.txt") {
+    if let Ok(lines) = read_lines("src/demo-input.txt") {
         //println!("===lines: {:?}", lines);
         spielen(lines);
     } else {
@@ -34,7 +34,7 @@ fn spielen(lines: io::Lines<io::BufReader<File>>) {
             cur_left_elf = split.next().unwrap();
             cur_right_elf = split.next().unwrap();
             println!("Elf links spielt: {}", cur_left_elf);
-            println!("Elf rechts spielt: {}", cur_right_elf);
+            println!("Elf rechts Anweisung: {}", cur_right_elf);
             let points = punkte_berechnen(cur_left_elf, cur_right_elf);
             println!("Spielpunkte {} <--> {}", points[0], points[1]);
             points_left_elf += points[0];
@@ -47,55 +47,59 @@ fn spielen(lines: io::Lines<io::BufReader<File>>) {
 
 /*
 A für Stein, B für Papier und C für Schere
-X für Stein, Y für Papier und Z für Schere
+X für verlieren, Y unentschieden und Z für gewinnen
 1 für Stein, 2 für Papier und 3 für Schere
 (0, wenn Sie verloren haben, 3, wenn die Runde unentschieden war , und 6 wenn du gewonnen hast)
  */
-fn punkte_berechnen(left_elf: &str, right_elf: &str) -> [u64; 2] {
+fn punkte_berechnen(left_elf: &str, order_right_elf: &str) -> [u64; 2] {
     let mut points: [u64; 2] = [0, 0]; // default
-    // beide Stein
-    if left_elf == "A" && right_elf == "X" {
+    // Stein mit Order verlieren
+    if left_elf == "A" && order_right_elf == "X" {
+        // ich wähle Schere
+        points = [1 + 6, 3 + 0];
+    }
+    // Stein mit Order unentschieden
+    if left_elf == "A" && order_right_elf == "Y" {
+        // ich wähle Stein
         points = [1 + 3, 1 + 3];
     }
-    // beide Papier
-    if left_elf == "B" && right_elf == "Y" {
+    // Stein mit Order gewinnen
+    if left_elf == "A" && order_right_elf == "Z" {
+        // wähle Papier
+        points = [1 + 0, 2 + 6];
+    }
+
+    // Papier mit Order verlieren
+    if left_elf == "B" && order_right_elf == "X" {
+        // ich wähle Stein
+        points = [2 + 6, 1 + 0];
+    }
+    // Papier mit Order unentschieden
+    if left_elf == "B" && order_right_elf == "Y" {
+        // ich wähle Papier
         points = [2 + 3, 2 + 3];
     }
-    // beide Schere
-    if left_elf == "C" && right_elf == "Z" {
+    // Papier mit Order gewinnen
+    if left_elf == "B" && order_right_elf == "Z" {
+        // wähle Schere
+        points = [2 + 0, 3 + 6];
+    }
+///////////
+    // Schere mit Order verlieren
+    if left_elf == "C" && order_right_elf == "X" {
+        // ich wähle Papier
+        points = [3 + 6, 2 + 0];
+    }
+    // Schere mit Order unentschieden
+    if left_elf == "C" && order_right_elf == "Y" {
+        // ich wähle Schere
         points = [3 + 3, 3 + 3];
     }
-
-    // Stein -> Papier
-    if left_elf == "A" && right_elf == "Y" {
-        points = [1 + 0, 2 + 6]
+    // Schere mit Order gewinnen
+    if left_elf == "C" && order_right_elf == "Z" {
+        // wähle Stein
+        points = [3 + 0, 1 + 6];
     }
-
-    // Stein <- Schere
-    if left_elf == "A" && right_elf == "Z" {
-        points = [1 + 6, 3 + 0]
-    }
-
-    // Papier <- Stein
-    if left_elf == "B" && right_elf == "X" {
-        points = [2 + 6, 1 + 0]
-    }
-
-    // Papier -> Schere
-    if left_elf == "B" && right_elf == "Z" {
-        points = [2 + 0, 3 + 6]
-    }
-
-    // Schere -> Stein
-    if left_elf == "C" && right_elf == "X" {
-        points = [3 + 0, 1 + 6]
-    }
-
-    // Schere <- Papier
-    if left_elf == "C" && right_elf == "Y" {
-        points = [3 + 6, 2 + 0]
-    }
-
     return points;
 }
 
