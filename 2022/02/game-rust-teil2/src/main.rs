@@ -12,7 +12,7 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 
 
 fn main() {
-    if let Ok(lines) = read_lines("src/demo-input.txt") {
+    if let Ok(lines) = read_lines("src/input.txt") {
         //println!("===lines: {:?}", lines);
         spielen(lines);
     } else {
