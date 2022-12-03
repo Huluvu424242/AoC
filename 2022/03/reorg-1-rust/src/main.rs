@@ -13,7 +13,7 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 
 fn main() {
     if let Ok(lines) = read_lines("../demo-input.txt") {
-        demo_ausgabe(lines);
+        packen(lines);
     } else {
         println!("read_lines goes wrong");
     }
@@ -25,6 +25,46 @@ fn demo_ausgabe(lines: io::Lines<io::BufReader<File>>){
         println!(">{}<",line.unwrap());
     }
 }
+
+
+fn packen(lines: io::Lines<io::BufReader<File>>){
+    for line in lines {
+        let inhalt: String = line.unwrap();
+        let rucksack = Rucksack::new(1, inhalt);
+        rucksack.printout();
+    }
+}
+
+
+struct Rucksack {
+    id: i64,
+    compartment1: String,
+    compartment2: String
+}
+
+impl Rucksack {
+
+    fn new(id :i64, inhalt:String)-> Rucksack{
+        let len:usize = inhalt.len();
+        let splitpoint:usize = (len/2) as usize;
+        let (left,right) = inhalt.split_at( splitpoint);
+        let rucksack = Rucksack {
+            id: id,
+            compartment1:  left.to_string(),
+            compartment2: right.to_string()
+        };
+        return rucksack;
+    }
+
+
+    fn printout(&self){
+        println!("\nRucksack {} enthält \n   links: {} \n  rechts: {}", self.id,self.compartment1,self.compartment2);
+    }
+}
+
+
+
+
 
 //
 // fn spielen(lines: io::Lines<io::BufReader<File>>) {
