@@ -40,10 +40,10 @@ fn list_priorities() {
 
 
 fn packen(lines: io::Lines<io::BufReader<File>>) {
-    let mut sum_priority:u64 =0;
+    let mut sum_priority: u64 = 0;
     let mut rucksack_nr: i64 = 0;
     let mut rucksack_in_group: usize = 0;
-    let mut rucksaecke:[Rucksack;3]=[Rucksack::new(-1,String::from("abab")), Rucksack::new(-1,String::from("abab")), Rucksack::new(-1,String::from("abab"))];
+    let mut rucksaecke: [Rucksack; 3] = [Rucksack::new(-1, String::from("abab")), Rucksack::new(-1, String::from("abab")), Rucksack::new(-1, String::from("abab"))];
 
     for line in lines {
         rucksack_nr += 1;
@@ -52,42 +52,50 @@ fn packen(lines: io::Lines<io::BufReader<File>>) {
         rucksack.printout();
         sum_priority += rucksack.priority;
         // Gruppenlogik
-        rucksaecke[rucksack_in_group]=rucksack;
+        rucksaecke[rucksack_in_group] = rucksack;
         if rucksack_in_group == 2 {
             // bestimme Gruppenabzeichen
-
+            let group_abzeichen = Rucksack::get_group_char(&rucksaecke[0],&rucksaecke[1],&rucksaecke[2]);
+            rucksaecke[0].group_char=group_abzeichen.to_string();
+            rucksaecke[1].group_char=group_abzeichen.to_string();
+            rucksaecke[2].group_char=group_abzeichen.to_string();
+            println!("###Gruppenabzeichen: {}",group_abzeichen);
             // setze Gruppe zurück
-            rucksack_in_group=0;
-        }else{
-            rucksack_in_group +=1;
+            rucksack_in_group = 0;
+        } else {
+            rucksack_in_group += 1;
         }
-
     }
-    println!("Die Summe der Priorität beträgt: {}",sum_priority);
+    println!("Die Summe der Priorität beträgt: {}", sum_priority);
 }
 
 
 struct Rucksack {
     id: i64,
+    inhalt: String,
     compartment1: String,
     compartment2: String,
     eq_zeichen: String,
     priority: u64,
+    group_char: String,
 }
 
 impl Rucksack {
     fn new(id: i64, inhalt: String) -> Rucksack {
+        let content:String = String::from(&inhalt);
         let len: usize = inhalt.len();
         let splitpoint: usize = (len / 2) as usize;
         let (left, right) = inhalt.split_at(splitpoint);
         let eq_str: String = Rucksack::get_equal_char(String::from(left), String::from(right));
         let eq_char: char = eq_str.chars().next().unwrap();
         let rucksack = Rucksack {
-            id: id,
+            id,
+            inhalt: content,
             compartment1: left.to_string(),
             compartment2: right.to_string(),
             eq_zeichen: eq_char.to_string(),
             priority: Rucksack::get_priority(eq_char),
+            group_char: String::from("")
         };
         return rucksack;
     }
@@ -108,6 +116,16 @@ impl Rucksack {
         }
         return String::from("");
     }
+
+    fn get_group_char(first: &Rucksack, second: &Rucksack, third: &Rucksack) -> String {
+        for zeichen in first.inhalt.chars().into_iter() {
+            if second.inhalt.contains(zeichen) && third.inhalt.contains(zeichen) {
+                return String::from(zeichen);
+            }
+        }
+        return String::from("");
+    }
+
 
     fn printout(&self) {
         println!("\nRucksack {} enthält \n   links: {} \n  rechts: {} \n  eqChar: {} \n Priority: {}", self.id, self.compartment1, self.compartment2, self.eq_zeichen, self.priority);
