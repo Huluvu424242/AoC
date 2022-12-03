@@ -28,3 +28,32 @@ Großgeschriebene Elementtypen A bis Z haben die Prioritäten 27 bis 52.
 Im obigen Beispiel ist die Priorität des Artikeltyps, der in beiden Fächern jedes Rucksacks erscheint, 16 (p), 38 (L), 42 (P), 22 (v), 20 (t) und 19 (s). ; die Summe davon ist 157.
 
 Suchen Sie den Gegenstandstyp, der in beiden Fächern jedes Rucksacks erscheint. Was ist die Summe der Prioritäten dieser Elementtypen?
+
+Ihre Rätselantwort war 8153.
+
+Die erste Hälfte dieses Puzzles ist fertig! Es bietet einen goldenen Stern: *
+
+--- Zweiter Teil ---
+Nachdem Sie die verlegten Gegenstände identifiziert haben, kommen die Elfen mit einem weiteren Problem zu Ihnen.
+
+Zur Sicherheit werden die Elfen in Dreiergruppen eingeteilt. Jeder Elf trägt ein Abzeichen, das seine Gruppe identifiziert. Aus Effizienzgründen ist das Abzeichen innerhalb jeder Gruppe von drei Elfen der einzige Gegenstandstyp, der von allen drei Elfen getragen wird. Das heißt, wenn das Abzeichen einer Gruppe Gegenstandstyp B ist, haben alle drei Elfen Gegenstandstyp B irgendwo in ihrem Rucksack, und höchstens zwei der Elfen tragen einen anderen Gegenstandstyp.
+
+Das Problem ist, dass jemand vergessen hat, den diesjährigen aktualisierten Echtheitsaufkleber auf die Abzeichen zu kleben. Alle Abzeichen müssen aus den Rucksäcken gezogen werden, damit die neuen Echtheitsaufkleber angebracht werden können.
+
+Außerdem hat niemand aufgeschrieben, welcher Gegenstandstyp den Abzeichen der einzelnen Gruppen entspricht. Der einzige Weg, um festzustellen, welcher Gegenstandstyp der richtige ist, besteht darin, den einen Gegenstandstyp zu finden, der allen drei Elfen in jeder Gruppe gemeinsam ist.
+
+Jeder Satz von drei Zeilen in Ihrer Liste entspricht einer einzelnen Gruppe, aber jede Gruppe kann einen anderen Badge-Elementtyp haben. Im obigen Beispiel sind die Rucksäcke der ersten Gruppe also die ersten drei Zeilen:
+
+vJrwpWtwJgWrhcsFMMfFFhFp
+jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+PmmdzqPrVvPwwTWBwg
+Und die Rucksäcke der zweiten Gruppe sind die nächsten drei Zeilen:
+
+wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+ttgJtRGJQctTZtZT
+CrZsJsPPZsGzwwsLwLmpwMDw
+In der ersten Gruppe ist der einzige Gegenstandstyp, der in allen drei Rucksäcken vorkommt, das kleine r; das müssen ihre Abzeichen sein. In der zweiten Gruppe muss der Badge-Artikeltyp Z sein.
+
+Für diese Punkte müssen noch Prioritäten gefunden werden, um die Aufkleberanbringung zu organisieren: Hier sind es 18 (r) für die erste Gruppe und 52 (Z) für die zweite Gruppe. Die Summe davon ist 70.
+
+Finden Sie den Gegenstandstyp, der den Abzeichen jeder Drei-Elfen-Gruppe entspricht. Was ist die Summe der Prioritäten dieser Elementtypen?
