@@ -28,9 +28,11 @@ fn demo_ausgabe(lines: io::Lines<io::BufReader<File>>){
 
 
 fn packen(lines: io::Lines<io::BufReader<File>>){
+    let mut i:i64=0;
     for line in lines {
+        i+=1;
         let inhalt: String = line.unwrap();
-        let rucksack = Rucksack::new(1, inhalt);
+        let rucksack = Rucksack::new(i, inhalt);
         rucksack.printout();
     }
 }
@@ -39,7 +41,8 @@ fn packen(lines: io::Lines<io::BufReader<File>>){
 struct Rucksack {
     id: i64,
     compartment1: String,
-    compartment2: String
+    compartment2: String,
+    eq_zeichen: String
 }
 
 impl Rucksack {
@@ -48,17 +51,27 @@ impl Rucksack {
         let len:usize = inhalt.len();
         let splitpoint:usize = (len/2) as usize;
         let (left,right) = inhalt.split_at( splitpoint);
+        let eq_char: String = Rucksack::get_equal_char(String::from(left),String::from(right));
         let rucksack = Rucksack {
             id: id,
             compartment1:  left.to_string(),
-            compartment2: right.to_string()
+            compartment2: right.to_string(),
+            eq_zeichen: eq_char
         };
         return rucksack;
     }
 
+    fn get_equal_char(left:String,right:String)->String{
+        for (i,zeichen)  in left.chars().into_iter().enumerate() {
+           if right.contains(zeichen){
+               return String::from(zeichen);
+           }
+        }
+        return String::from("");
+    }
 
     fn printout(&self){
-        println!("\nRucksack {} enthält \n   links: {} \n  rechts: {}", self.id,self.compartment1,self.compartment2);
+        println!("\nRucksack {} enthält \n   links: {} \n  rechts: {} \n  eqChar: {}", self.id,self.compartment1,self.compartment2,self.eq_zeichen);
     }
 }
 
