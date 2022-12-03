@@ -1,7 +1,7 @@
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
-use std::str;
+// use std::str;
 
 
 fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
@@ -29,7 +29,7 @@ fn demo_ausgabe(lines: io::Lines<io::BufReader<File>>) {
 
 fn list_priorities() {
     let alpha = String::from("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    for (zeichen) in alpha.chars().into_iter() {
+    for zeichen in alpha.chars().into_iter() {
         if zeichen.is_uppercase() {
             println!("{} = {}", zeichen, zeichen as i64 - 38);
         } else {
@@ -87,7 +87,7 @@ impl Rucksack {
     }
 
     fn get_equal_char(left: String, right: String) -> String {
-        for (i, zeichen) in left.chars().into_iter().enumerate() {
+        for zeichen in left.chars().into_iter() {
             if right.contains(zeichen) {
                 return String::from(zeichen);
             }
