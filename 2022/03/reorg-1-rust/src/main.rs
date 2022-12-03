@@ -14,6 +14,7 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 fn main() {
     if let Ok(lines) = read_lines("../demo-input.txt") {
         packen(lines);
+        list_priority();
     } else {
         println!("read_lines goes wrong");
     }
@@ -23,6 +24,17 @@ fn main() {
 fn demo_ausgabe(lines: io::Lines<io::BufReader<File>>){
     for line in lines {
         println!(">{}<",line.unwrap());
+    }
+}
+
+fn list_priority(){
+    let alpha = String::from("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
+    for (zeichen)  in alpha.chars().into_iter() {
+        if zeichen.is_uppercase() {
+            println!("{} = {}", zeichen, zeichen as i64 -38 );
+        }else {
+            println!("{} = {}", zeichen, zeichen as u32 - 38 - 58);
+        }
     }
 }
 
