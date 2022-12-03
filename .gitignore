@@ -6,5 +6,5 @@ rls/
 *.o
 .vscode/
 *.iml
-
+*.lock
 
