@@ -41,6 +41,7 @@ fn list_priorities() {
 
 fn packen(lines: io::Lines<io::BufReader<File>>) {
     let mut sum_priority: u64 = 0;
+    let mut sum_group_priority: u64 = 0;
     let mut rucksack_nr: i64 = 0;
     let mut rucksack_in_group: usize = 0;
     let mut rucksaecke: [Rucksack; 3] = [Rucksack::new(-1, String::from("abab")), Rucksack::new(-1, String::from("abab")), Rucksack::new(-1, String::from("abab"))];
@@ -60,6 +61,9 @@ fn packen(lines: io::Lines<io::BufReader<File>>) {
             rucksaecke[1].group_char=group_abzeichen.to_string();
             rucksaecke[2].group_char=group_abzeichen.to_string();
             println!("###Gruppenabzeichen: {}",group_abzeichen);
+            let group_priority = Rucksack::get_priority(group_abzeichen.chars().next().unwrap());
+            println!("###Gr. Priority: {}",group_priority);
+            sum_group_priority +=group_priority;
             // setze Gruppe zurück
             rucksack_in_group = 0;
         } else {
@@ -67,6 +71,7 @@ fn packen(lines: io::Lines<io::BufReader<File>>) {
         }
     }
     println!("Die Summe der Priorität beträgt: {}", sum_priority);
+    println!("Die Summe der Gruppen Priorität beträgt: {}", sum_group_priority);
 }
 
 
