@@ -40,13 +40,16 @@ fn list_priorities() {
 
 
 fn packen(lines: io::Lines<io::BufReader<File>>) {
+    let mut sum_priority:u64 =0;
     let mut i: i64 = 0;
     for line in lines {
         i += 1;
         let inhalt: String = line.unwrap();
         let rucksack = Rucksack::new(i, inhalt);
         rucksack.printout();
+        sum_priority += rucksack.priority;
     }
+    println!("Die Summe der Priorität beträgt: {}",sum_priority);
 }
 
 
