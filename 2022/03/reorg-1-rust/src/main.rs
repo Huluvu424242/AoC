@@ -12,7 +12,7 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 
 
 fn main() {
-    if let Ok(lines) = read_lines("../input.txt") {
+    if let Ok(lines) = read_lines("../demo-input.txt") {
         list_priorities();
         packen(lines);
     } else {
@@ -41,13 +41,27 @@ fn list_priorities() {
 
 fn packen(lines: io::Lines<io::BufReader<File>>) {
     let mut sum_priority:u64 =0;
-    let mut i: i64 = 0;
+    let mut rucksack_nr: i64 = 0;
+    let mut rucksack_in_group: usize = 0;
+    let mut rucksaecke:[Rucksack;3]=[Rucksack::new(-1,String::from("abab")), Rucksack::new(-1,String::from("abab")), Rucksack::new(-1,String::from("abab"))];
+
     for line in lines {
-        i += 1;
+        rucksack_nr += 1;
         let inhalt: String = line.unwrap();
-        let rucksack = Rucksack::new(i, inhalt);
+        let rucksack = Rucksack::new(rucksack_nr, inhalt);
         rucksack.printout();
         sum_priority += rucksack.priority;
+        // Gruppenlogik
+        rucksaecke[rucksack_in_group]=rucksack;
+        if rucksack_in_group == 2 {
+            // bestimme Gruppenabzeichen
+
+            // setze Gruppe zurück
+            rucksack_in_group=0;
+        }else{
+            rucksack_in_group +=1;
+        }
+
     }
     println!("Die Summe der Priorität beträgt: {}",sum_priority);
 }
