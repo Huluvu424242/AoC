@@ -13,36 +13,36 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 
 fn main() {
     if let Ok(lines) = read_lines("../demo-input.txt") {
+        list_priorities();
         packen(lines);
-        list_priority();
     } else {
         println!("read_lines goes wrong");
     }
 }
 
 // einfache anzeige des datei inhaltes
-fn demo_ausgabe(lines: io::Lines<io::BufReader<File>>){
+fn demo_ausgabe(lines: io::Lines<io::BufReader<File>>) {
     for line in lines {
-        println!(">{}<",line.unwrap());
+        println!(">{}<", line.unwrap());
     }
 }
 
-fn list_priority(){
+fn list_priorities() {
     let alpha = String::from("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ");
-    for (zeichen)  in alpha.chars().into_iter() {
+    for (zeichen) in alpha.chars().into_iter() {
         if zeichen.is_uppercase() {
-            println!("{} = {}", zeichen, zeichen as i64 -38 );
-        }else {
+            println!("{} = {}", zeichen, zeichen as i64 - 38);
+        } else {
             println!("{} = {}", zeichen, zeichen as u32 - 38 - 58);
         }
     }
 }
 
 
-fn packen(lines: io::Lines<io::BufReader<File>>){
-    let mut i:i64=0;
+fn packen(lines: io::Lines<io::BufReader<File>>) {
+    let mut i: i64 = 0;
     for line in lines {
-        i+=1;
+        i += 1;
         let inhalt: String = line.unwrap();
         let rucksack = Rucksack::new(i, inhalt);
         rucksack.printout();
@@ -54,41 +54,48 @@ struct Rucksack {
     id: i64,
     compartment1: String,
     compartment2: String,
-    eq_zeichen: String
+    eq_zeichen: String,
+    priority: u64,
 }
 
 impl Rucksack {
-
-    fn new(id :i64, inhalt:String)-> Rucksack{
-        let len:usize = inhalt.len();
-        let splitpoint:usize = (len/2) as usize;
-        let (left,right) = inhalt.split_at( splitpoint);
-        let eq_char: String = Rucksack::get_equal_char(String::from(left),String::from(right));
+    fn new(id: i64, inhalt: String) -> Rucksack {
+        let len: usize = inhalt.len();
+        let splitpoint: usize = (len / 2) as usize;
+        let (left, right) = inhalt.split_at(splitpoint);
+        let eq_str: String = Rucksack::get_equal_char(String::from(left), String::from(right));
+        let eq_char: char = eq_str.chars().next().unwrap();
         let rucksack = Rucksack {
             id: id,
-            compartment1:  left.to_string(),
+            compartment1: left.to_string(),
             compartment2: right.to_string(),
-            eq_zeichen: eq_char
+            eq_zeichen: eq_char.to_string(),
+            priority: Rucksack::get_priority(eq_char),
         };
         return rucksack;
     }
 
-    fn get_equal_char(left:String,right:String)->String{
-        for (i,zeichen)  in left.chars().into_iter().enumerate() {
-           if right.contains(zeichen){
-               return String::from(zeichen);
-           }
+    fn get_priority(zeichen: char) -> u64 {
+        if zeichen.is_uppercase() {
+            return zeichen as u64 - 38;
+        } else {
+            return zeichen as u64 - 38 - 58;
+        }
+    }
+
+    fn get_equal_char(left: String, right: String) -> String {
+        for (i, zeichen) in left.chars().into_iter().enumerate() {
+            if right.contains(zeichen) {
+                return String::from(zeichen);
+            }
         }
         return String::from("");
     }
 
-    fn printout(&self){
-        println!("\nRucksack {} enthält \n   links: {} \n  rechts: {} \n  eqChar: {}", self.id,self.compartment1,self.compartment2,self.eq_zeichen);
+    fn printout(&self) {
+        println!("\nRucksack {} enthält \n   links: {} \n  rechts: {} \n  eqChar: {} \n Priority: {}", self.id, self.compartment1, self.compartment2, self.eq_zeichen, self.priority);
     }
 }
-
-
-
 
 
 //
