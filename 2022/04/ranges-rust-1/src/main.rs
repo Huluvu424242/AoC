@@ -12,14 +12,17 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 
 
 fn main() {
-    let mut sum_containments: u64 = 0;
-    if let Ok(lines) = read_lines("../input.txt") {
+    let mut sum_full_containments: u64 = 0;
+    let mut sum_part_containments: u64 = 0;
+    if let Ok(lines) = read_lines("../demo-input.txt") {
         for line in lines {
             let (from1, to1, from2, to2) = read_ranges(line);
-            sum_containments += contains_range(from1, to1, from2, to2);
             println!("[{} bis {}] und [{} bis {}]", from1, to1, from2, to2);
+            sum_full_containments += full_contains_range(from1, to1, from2, to2);
+            sum_part_containments += part_contains_range(from1, to1, from2, to2);
         }
-        println!("Es wurden {} enthaltene Bereiche gefunden.",sum_containments);
+        println!("Es wurden {} vollständig überlappende Bereiche gefunden.", sum_full_containments);
+        println!("Es wurden {} teilweise überlappende Bereiche gefunden.", sum_part_containments);
     } else {
         println!("read_lines goes wrong");
     }
@@ -32,7 +35,19 @@ fn demo_ausgabe(lines: io::Lines<io::BufReader<File>>) {
     }
 }
 
-fn contains_range(from1: i64, to1: i64, from2: i64, to2: i64) -> u64 {
+
+fn part_contains_range(from1: i64, to1: i64, from2: i64, to2: i64) -> u64 {
+    if from1 > to1 || from2 > to2 {
+        println!("########### Da ist was faul ############\n [{}-{}] [{}-{}]\n########################################", from1, to1, from2, to2);
+    }
+    if (from1 >= from2 && to1 <= to2) || (from2 >= from1 && to2 <= to1) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+fn full_contains_range(from1: i64, to1: i64, from2: i64, to2: i64) -> u64 {
     if from1 > to1 || from2 > to2 {
         println!("########### Da ist was faul ############\n [{}-{}] [{}-{}]\n########################################", from1, to1, from2, to2);
     }
