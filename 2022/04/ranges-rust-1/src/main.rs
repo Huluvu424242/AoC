@@ -14,7 +14,7 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 fn main() {
     let mut sum_full_containments: u64 = 0;
     let mut sum_part_containments: u64 = 0;
-    if let Ok(lines) = read_lines("../demo-input.txt") {
+    if let Ok(lines) = read_lines("../input.txt") {
         for line in lines {
             let (from1, to1, from2, to2) = read_ranges(line);
             println!("[{} bis {}] und [{} bis {}]", from1, to1, from2, to2);
