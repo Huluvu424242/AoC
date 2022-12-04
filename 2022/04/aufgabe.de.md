@@ -40,3 +40,20 @@ Diese Beispielliste verwendet einstellige Abschnitts-IDs, um das Zeichnen zu ver
 Einige der Paare haben bemerkt, dass eine ihrer Aufgaben die andere vollständig enthält. Zum Beispiel enthält 2-8 vollständig 3-7 und 6-6 ist vollständig in 4-6 enthalten. In Paaren, in denen eine Aufgabe die andere vollständig enthält, würde ein Elf im Paar ausschließlich Abschnitte reinigen, deren Partner bereits reinigen wird, so dass diese am dringendsten einer Überprüfung bedürfen. In diesem Beispiel gibt es 2 solche Paare.
 
 Bei wie vielen Zuordnungspaaren enthält ein Bereich den anderen vollständig?
+
+Ihre Rätselantwort war 441.
+
+Die erste Hälfte dieses Puzzles ist fertig! Es bietet einen goldenen Stern: *
+
+--- Zweiter Teil ---
+Es scheint, als wäre noch einiges an Doppelarbeit geplant. Stattdessen möchten die Elfen wissen, wie viele Paare sich überhaupt überschneiden.
+
+Im obigen Beispiel überlappen sich die ersten beiden Paare (2-4,6-8 und 2-3,4-5) nicht, während die verbleibenden vier Paare (5-7,7-9, 2-8,3 -7, 6-6,4-6 und 2-6,4-8) überlappen:
+
+5-7,7-9 überschneidet sich in einem einzigen Abschnitt, 7.
+2-8,3-7 überlappt alle Abschnitte 3 bis 7.
+6-6,4-6 überlappt sich in einem einzigen Abschnitt, 6.
+2-6,4-8 überschneidet sich in den Abschnitten 4, 5 und 6.
+In diesem Beispiel beträgt die Anzahl der überlappenden Zuordnungspaare also 4.
+
+In wie vielen Zuordnungspaaren überschneiden sich die Bereiche?
