@@ -40,7 +40,8 @@ fn part_contains_range(from1: i64, to1: i64, from2: i64, to2: i64) -> u64 {
     if from1 > to1 || from2 > to2 {
         println!("########### Da ist was faul ############\n [{}-{}] [{}-{}]\n########################################", from1, to1, from2, to2);
     }
-    if (from1 >= from2 && to1 <= to2) || (from2 >= from1 && to2 <= to1) {
+    if      (to2>=from1 && to2<=to1) || (from2>=from1 && from2<=to1)
+        ||  (to1>=from2 && to1<=to2) || (from1>=from2 && from1<=to2) {
         return 1;
     } else {
         return 0;
