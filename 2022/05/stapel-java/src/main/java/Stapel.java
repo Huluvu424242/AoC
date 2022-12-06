@@ -12,7 +12,7 @@ public class Stapel {
 
 
     protected void rechne() {
-        final Path inputPath = Path.of("2022/05/demo-input.txt");
+        final Path inputPath = Path.of("2022/05/input.txt");
         erfasseStacks(inputPath);
         System.out.format("Path: %s", inputPath.toAbsolutePath().toString());
     }

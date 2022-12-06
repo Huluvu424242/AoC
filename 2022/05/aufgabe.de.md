@@ -57,4 +57,56 @@ Die Elfen müssen nur wissen, welche Kiste oben auf jedem Stapel landet; In dies
 
 Welche Kiste landet nach Abschluss des Umordnungsverfahrens oben auf jedem Stapel?
 
+Ihre Rätselantwort war VRWBSFZWM.
+
+Die erste Hälfte dieses Puzzles ist fertig! Es bietet einen goldenen Stern: *
+
+--- Zweiter Teil ---
+Als Sie beobachten, wie der Kranführer die Kisten fachmännisch neu arrangiert, stellen Sie fest, dass der Prozess nicht Ihrer Vorhersage folgt.
+
+Etwas Schlamm bedeckte die Schrift an der Seite des Krans, und Sie wischen es schnell weg. Der Kran ist kein CrateMover 9000, sondern ein CrateMover 9001.
+
+Der CrateMover 9001 zeichnet sich durch viele neue und aufregende Funktionen aus: Klimaanlage, Ledersitze, ein zusätzlicher Getränkehalter und die Möglichkeit, mehrere Kisten gleichzeitig aufzunehmen und zu bewegen.
+
+Unter erneuter Betrachtung des obigen Beispiels beginnen die Kisten in derselben Konfiguration:
+```
+    [D]
+[N] [C]
+[Z] [M] [P]
+ 1   2   3
+```
+Das Verschieben einer einzelnen Kiste von Stapel 2 auf Stapel 1 verhält sich wie zuvor:
+```
+[D]
+[N] [C]
+[Z] [M] [P]
+ 1   2   3
+```
+Das Bewegen von drei Kisten von Stapel 1 auf Stapel 3 bedeutet jedoch, dass diese drei bewegten Kisten in derselben Reihenfolge bleiben, was zu dieser neuen Konfiguration führt:
+```
+        [D]
+        [N]
+    [C] [Z]
+    [M] [P]
+ 1   2   3
+```
+Als nächstes, wenn beide Kisten von Stapel 2 auf Stapel 1 verschoben werden, behalten sie auch ihre Reihenfolge bei:
+```
+        [D]
+        [N]
+[C] [Z]
+[M] [P]
+ 1   2   3
+```
+Schließlich wird immer noch eine einzelne Kiste von Stapel 1 auf Stapel 2 verschoben, aber jetzt wird Kiste C verschoben:
+```
+        [D]
+        [N]
+        [Z]
+[M] [C] [P]
+ 1   2   3
+```
+In diesem Beispiel hat der CrateMover 9001 die Kisten in eine völlig andere Reihenfolge gebracht: MCD.
+
+Aktualisieren Sie Ihre Simulation, bevor der Umordnungsprozess abgeschlossen ist, damit die Elfen wissen, wo sie stehen müssen, um die letzten Vorräte abzuladen. Welche Kiste landet nach Abschluss des Umordnungsverfahrens oben auf jedem Stapel?
 
