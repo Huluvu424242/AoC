@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::{self, BufRead};
+use std::ops::Add;
 use std::path::Path;
 
 
@@ -11,7 +12,7 @@ fn read_lines<P>(filename: P) -> io::Result<io::Lines<io::BufReader<File>>>
 
 
 fn main() {
-    let stacks: [Stack<char>; 9] = [Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new()];
+    let mut stacks: [Stack<char>; 9] = [Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new(),Stack::new()];
     if let Ok(lines) = read_lines("../demo-input.txt") {
         for (line_nr, line) in lines.enumerate() {
             let zeile=&line.unwrap();
@@ -25,12 +26,20 @@ fn main() {
                     eprintln!("{} Stacks gefunden aber erwartet 9",len);
                 }
             } else if line_nr < 10{
-                // Stacks aufbauen
-                println!(">{}<", zeile);
+                if zeile.len().eq(&0){
+                    println!("Zeile {} enthält keine Elemente.",line_nr);
+                }else {
+                    // Stacks aufbauen
+                    println!(">{}<", &zeile);
+                    for (pos, char) in zeile.chars().enumerate() {
+                        stacks[pos].push(char);
+                    }
+
+                }
             } else {
                 // Bewegen
             }
-            println!("{}\t>{}<", line_nr, zeile);
+            println!("{}\t>{}<\n", line_nr, zeile);
         }
         // let mut stack: Stack<isize> = Stack::new();
         // stack.push(1);
@@ -38,6 +47,12 @@ fn main() {
         // assert_eq!(item.unwrap(), 1);
     } else {
         println!("read_lines goes wrong");
+    }
+}
+
+fn printStacks(stacks :[Stack<char>;9]){
+    for (nr,stack) in stacks.iter().enumerate(){
+        println!("Stack[{}]={}",nr,stack.to_string());
     }
 }
 
@@ -70,6 +85,16 @@ impl<T> Stack<T> {
 
     fn peek(&self) -> Option<&T> {
         self.stack.last()
+    }
+
+    fn to_string(&self)->String {
+        // let  a = String::from_iter(&self.stack);
+        let s: String = &self.stack.iter().collect();
+        // for zeichen in self.stack.into_iter() {
+        //     let c = String::from(&zeichen);
+        //     zeichenkette.append();
+        // }
+        return String::from("");
     }
 }
 
