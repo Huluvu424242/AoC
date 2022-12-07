@@ -12,7 +12,7 @@ public class Stapel {
 
 
     protected void rechne() {
-        final Path inputPath = Path.of("2022/05/demo-input.txt");
+        final Path inputPath = Path.of("2022/05/input.txt");
         erfasseStacks(inputPath);
         System.out.format("Path: %s", inputPath.toAbsolutePath().toString());
     }
@@ -59,9 +59,9 @@ public class Stapel {
             final int vonNr = Integer.parseInt(group2);
             final int zuNr = Integer.parseInt(group3);
             System.out.format("Verschiebe %d von %d zu %d.\n",anzahl,vonNr,zuNr);
-            if(anzahl>3) {
-                System.out.format("ALARM, wir schaffen nur 3 aber er will %d verschieben.", anzahl);
-            }
+//            if(anzahl>3) {
+//                System.out.format("ALARM, wir schaffen nur 3 aber er will %d verschieben.\n", anzahl);
+//            }
 
             final Haufen fromHaufen = stacks.get(vonNr-1);
             final Haufen toHaufen = stacks.get(zuNr-1);
@@ -69,7 +69,9 @@ public class Stapel {
             for (int i = 0; i < anzahl; i++) {
                 tmpStack.push(fromHaufen.pop());
             }
-            tmpStack.stream().sorted(Comparator.reverseOrder()).forEach(toHaufen::push);
+            for (int i = 0; i < anzahl; i++) {
+                toHaufen.push(tmpStack.pop());
+            }
             stacks.put(vonNr-1,fromHaufen);
             stacks.put(zuNr-1,toHaufen);
             printStacksVertical(stacks);
