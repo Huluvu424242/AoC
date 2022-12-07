@@ -110,3 +110,10 @@ In diesem Beispiel hat der CrateMover 9001 die Kisten in eine völlig andere Rei
 
 Aktualisieren Sie Ihre Simulation, bevor der Umordnungsprozess abgeschlossen ist, damit die Elfen wissen, wo sie stehen müssen, um die letzten Vorräte abzuladen. Welche Kiste landet nach Abschluss des Umordnungsverfahrens oben auf jedem Stapel?
 
+Ihre Rätselantwort war RBTWJWMCF.
+
+Beide Teile dieses Puzzles sind vollständig! Sie bieten zwei goldene Sterne: **
+
+An dieser Stelle sollten Sie zu Ihrem Adventskalender zurückkehren und ein weiteres Rätsel ausprobieren.
+
+Wenn Sie es trotzdem sehen möchten, können Sie Ihren Rätseleingang abrufen.
