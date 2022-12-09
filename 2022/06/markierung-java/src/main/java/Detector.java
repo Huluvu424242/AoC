@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 import java.nio.file.Path;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Detector {
 
@@ -17,8 +16,9 @@ public class Detector {
             int lineNr = 1;
             while (scanner.hasNext()) {
                 final String zeile = scanner.nextLine();
-                final int pos = getMarkerPosFrom(zeile);
-                System.out.format("\n[%d]: %s -> %d",lineNr,zeile,pos);
+                final int posPacketMarker = getMarkerPosFrom(zeile,4);
+                final int posMessageMarker = getMarkerPosFrom(zeile,14);
+                System.out.format("\n[%d]: %s -> %d -> %d",lineNr,zeile,posPacketMarker,posMessageMarker);
 
                 lineNr++;
             }
@@ -28,17 +28,17 @@ public class Detector {
         }
     }
 
-    protected int getMarkerPosFrom(String zeile){
+    protected int getMarkerPosFrom(final String zeile, final int buffersize){
         // len 0-3
         Queue<Character> fifo = new LinkedList<>();
         for (int i = 0; i < zeile.length() ; i++) {
             final char zeichen = zeile.charAt(i);
-            if ( fifo.size() == 4) {
+            if ( fifo.size() == buffersize) {
                 fifo.remove();
             }
             fifo.add(zeichen);
             final Set<Character> set = new HashSet<>(fifo);
-            if(set.size()==4) return i+1;
+            if(set.size()==buffersize) return i+1;
         }
         return -1;
     }
