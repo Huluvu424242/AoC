@@ -49,3 +49,7 @@ nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg: erste Markierung nach Zeichen 29
 zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw: erste Markierung nach Zeichen 26
 ```
 Wie viele Zeichen müssen verarbeitet werden, bevor die erste Nachrichtenanfangsmarkierung erkannt wird?
+
+Ihre Rätselantwort war 3263.
+
+Beide Teile dieses Puzzles sind vollständig! Sie bieten zwei goldene Sterne: **
