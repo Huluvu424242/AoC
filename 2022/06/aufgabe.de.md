@@ -29,3 +29,23 @@ nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg: erste Markierung nach Zeichen 10
 zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw: erste Markierung nach Zeichen 11
 ```
 Wie viele Zeichen müssen verarbeitet werden, bevor die erste Start-of-Packet-Markierung erkannt wird?
+
+Ihre Rätselantwort war 1361.
+
+Die erste Hälfte dieses Puzzles ist fertig! Es bietet einen goldenen Stern: *
+
+--- Zweiter Teil ---
+Das Kommunikationssystem Ihres Geräts erkennt Pakete korrekt, funktioniert aber immer noch nicht. Es sieht so aus, als müsste es auch nach Nachrichten suchen.
+
+Eine Start-of-Message-Markierung ist genau wie eine Start-of-Packet-Markierung, außer dass sie aus 14 verschiedenen Zeichen statt aus 4 besteht.
+
+Hier sind die ersten Positionen der Nachrichtenanfangsmarkierungen für alle oben genannten Beispiele:
+
+```
+mjqjpqmgbljsphdztnvjfqwrcgsmlb: erste Markierung nach Zeichen 19
+bvwbjplbgvbhsrlpgdmjqwftvncz: erste Markierung nach Zeichen 23
+nppdvjthqldpwncqszvftbrmjlhg: erste Markierung nach Zeichen 23
+nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg: erste Markierung nach Zeichen 29
+zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw: erste Markierung nach Zeichen 26
+```
+Wie viele Zeichen müssen verarbeitet werden, bevor die erste Nachrichtenanfangsmarkierung erkannt wird?

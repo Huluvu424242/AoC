@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Detector {
 
     public static void main(String[] args) {
-        final Path inputPath = Path.of("2022/06/input.txt");
+        final Path inputPath = Path.of("2022/06/demo-input.txt");
         System.out.format("Path: %s", inputPath.toAbsolutePath());
         final Detector detector=new Detector();
         detector.erfasseDaten(inputPath);
