@@ -12,7 +12,7 @@ Daten erfassen:
 * File zeilenweise lesen und auswerten der Kommandos
 ```
 $ cd /  -> curPath = /
-$ cd ..  -> curPath = curPath.substring(0,beforeLast(/))
+$ cd ..  -> curPath = curPath.substring(0,beforeLast(/)) und addieren zum parent
 $ cd <folder>  -> curPath = curPath + folder + "/"
 $ ls -> ignorieren
 dir <folder> -> ignorieren
