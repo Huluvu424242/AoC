@@ -34,10 +34,11 @@ public class Calculator {
         } catch (FileNotFoundException fnfe) {
             fnfe.printStackTrace();
         }
-         auswertung();
+         berechneTeil1();
+         berechneTeil2();
     }
 
-    private void auswertung() {
+    private void berechneTeil1() {
        final int sum= this.folders
             .keySet()
             .stream()
@@ -47,12 +48,22 @@ public class Calculator {
             .map(key -> folders.getOrDefault(key,0))
             .reduce(0,Integer::sum);
 
-       System.out.format("\n\nDie Summe über alle Verzeichnisse <100000 beträgt: %d",sum);
-
-//        .collect(Collectors.summingInt(Integer::intValue))
-
-        //        File.separator
+       System.out.format("\n\n(I) Die Summe über alle Verzeichnisse <100000 beträgt: %d",sum);
     }
+
+    private void berechneTeil2() {
+        final int sum= this.folders
+            .keySet()
+            .stream()
+            .peek(key->System.out.format("\n(1) [%s]=%d",key,folders.getOrDefault(key,0)))
+            .filter(key-> folders.getOrDefault(key,0)<=100000)
+            .peek(key->System.out.format("\n(2) [%s]=%d",key,folders.getOrDefault(key,0)))
+            .map(key -> folders.getOrDefault(key,0))
+            .reduce(0,Integer::sum);
+
+        System.out.format("\n\n(I) Die Summe über alle Verzeichnisse <100000 beträgt: %d",sum);
+    }
+
 
     private void bearbeiteZeile(final int lineNr,final String zeile) {
         if(curPath!=null) {
