@@ -15,7 +15,7 @@ public class Calculator {
 
 
     public static void main(String[] args) {
-        final Path inputPath = Path.of("2022/07/demo-input.txt");
+        final Path inputPath = Path.of("2022/07/input.txt");
         System.out.format("Path: %s", inputPath.toAbsolutePath());
         final Calculator calculator = new Calculator();
         calculator.erfasseDaten(inputPath);

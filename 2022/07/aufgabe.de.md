@@ -86,3 +86,26 @@ Als äußerstes Verzeichnis enthält / alle Dateien. Seine Gesamtgröße beträg
 Suchen Sie zunächst alle Verzeichnisse mit einer Gesamtgröße von höchstens 100000 und berechnen Sie dann die Summe ihrer Gesamtgrößen. Im obigen Beispiel sind diese Verzeichnisse a und e; die Summe ihrer Gesamtgrößen beträgt 95437 (94853 + 584). (Wie in diesem Beispiel kann dieser Prozess Dateien mehr als einmal zählen!)
 
 Finden Sie alle Verzeichnisse mit einer Gesamtgröße von höchstens 100000. Wie groß ist die Summe der Gesamtgröße dieser Verzeichnisse?
+
+Ihre Rätselantwort war 1307902.
+
+Die erste Hälfte dieses Puzzles ist fertig! Es bietet einen goldenen Stern: *
+
+--- Zweiter Teil ---
+Jetzt können Sie ein zu löschendes Verzeichnis auswählen.
+
+Der für das Dateisystem verfügbare Gesamtspeicherplatz beträgt 70000000. Um das Update auszuführen, benötigen Sie mindestens 30000000 ungenutzten Speicherplatz. Sie müssen ein Verzeichnis finden, das Sie löschen können und das genügend Speicherplatz freigibt, um das Update auszuführen.
+
+Im obigen Beispiel beträgt die Gesamtgröße des äußersten Verzeichnisses (und damit der gesamte belegte Speicherplatz) 48381165; Das bedeutet, dass die Größe des ungenutzten Speicherplatzes derzeit 21618835 betragen muss, was nicht ganz den 30000000 entspricht, die für das Update erforderlich sind. Daher muss für das Update weiterhin ein Verzeichnis mit einer Gesamtgröße von mindestens 8381165 gelöscht werden, bevor es ausgeführt werden kann.
+
+Um dies zu erreichen, haben Sie folgende Möglichkeiten:
+
+```
+Löschen Sie das Verzeichnis e, was den ungenutzten Speicherplatz um 584 erhöhen würde.
+Löschen Sie das Verzeichnis a, was den ungenutzten Speicherplatz um 94853 erhöhen würde.
+Löschen Sie das Verzeichnis d, was den ungenutzten Speicherplatz um 24933642 erhöhen würde.
+Löschen Sie das Verzeichnis /, was den ungenutzten Speicherplatz um 48381165 erhöhen würde.
+```
+Die Verzeichnisse e und a sind beide zu klein; Wenn Sie sie löschen, wird nicht genügend Speicherplatz freigegeben. Allerdings sind die Verzeichnisse d und / beide groß genug! Wählen Sie zwischen diesen den kleinsten: d, wodurch der ungenutzte Speicherplatz um 24933642 erhöht wird.
+
+Suchen Sie das kleinste Verzeichnis, das, wenn es gelöscht wird, genügend Speicherplatz auf dem Dateisystem freigeben würde, um das Update auszuführen. Wie groß ist dieses Verzeichnis insgesamt?
