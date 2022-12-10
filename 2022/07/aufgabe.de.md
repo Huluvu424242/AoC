@@ -3,14 +3,15 @@ Sie können Vögel zwitschern und Regentropfen hören, die auf Blätter treffen,
 
 Das Gerät, das dir die Elfen gegeben haben, hat nicht nur Probleme mit seinem Kommunikationssystem. Sie versuchen, ein Systemupdate auszuführen:
 
-$ system-update --bitte --hübsch-bitte-mit-Zucker obendrauf
-Fehler: Kein Speicherplatz mehr auf dem Gerät
+```
+$ system-update --please --pretty-please-with-sugar-on-top
+Error: No space left on device
+```
 Vielleicht können Sie einige Dateien löschen, um Platz für das Update zu schaffen?
 
 Sie durchsuchen das Dateisystem, um die Situation einzuschätzen, und speichern die resultierende Terminalausgabe (Ihre Rätseleingabe). Zum Beispiel:
 
 ```
-
 $ cd /
 $ ls
 dir a
