@@ -34,8 +34,24 @@ public class Calculator {
         } catch (FileNotFoundException fnfe) {
             fnfe.printStackTrace();
         }
-        // auswertung
-//        File.separator
+         auswertung();
+    }
+
+    private void auswertung() {
+       final int sum= this.folders
+            .keySet()
+            .stream()
+            .peek(key->System.out.format("\n(1) [%s]=%d",key,folders.getOrDefault(key,0)))
+            .filter(key-> folders.getOrDefault(key,0)<=100000)
+            .peek(key->System.out.format("\n(2) [%s]=%d",key,folders.getOrDefault(key,0)))
+            .map(key -> folders.getOrDefault(key,0))
+            .reduce(0,Integer::sum);
+
+       System.out.format("\n\nDie Summe über alle Verzeichnisse <100000 beträgt: %d",sum);
+
+//        .collect(Collectors.summingInt(Integer::intValue))
+
+        //        File.separator
     }
 
     private void bearbeiteZeile(final int lineNr,final String zeile) {
@@ -48,7 +64,9 @@ public class Calculator {
             return;
         }
         if(zeile.matches("\\$ cd ..")){
+            final int size = this.folders.getOrDefault(this.curPath.toString(),0);
             this.curPath=this.curPath.getParentFile();
+            this.folders.put(this.curPath.toString(),this.folders.getOrDefault(this.curPath.toString(),0)+size);
             System.out.format("\t\t\t|\t%s=[%d]",this.curPath.toString(), folders.getOrDefault(this.curPath.toString(),0));
             return;
         }
