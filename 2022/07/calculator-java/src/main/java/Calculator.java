@@ -14,7 +14,7 @@ public class Calculator {
 
 
     public static void main(String[] args) {
-        final Path inputPath = Path.of("2022/07/demo-input.txt");
+        final Path inputPath = Path.of("2022/07/input.txt");
         System.out.format("Path: %s", inputPath.toAbsolutePath());
         final Calculator calculator = new Calculator();
         calculator.erfasseDaten(inputPath);
@@ -49,7 +49,7 @@ public class Calculator {
             .map(key -> folders.getOrDefault(key, 0))
             .reduce(0, Integer::sum);
 
-        System.out.format("\n\n(I) Die Summe über alle Verzeichnisse <100000 beträgt: %d", sum);
+        System.out.format("\n\n(I) Die Summe über alle Verzeichnisse <100000 beträgt: %d\n\n", sum);
     }
 
     private void berechneTeil2() {
