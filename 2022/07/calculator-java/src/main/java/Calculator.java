@@ -30,7 +30,7 @@ public class Calculator {
                 lineNr++;
             }
             // falls wir am Ende in einem Subpath sind berechnen wir noch die parents
-            while (curPath.toString().length()>1){
+            while (curPath.toString().length() > 1) {
                 bearbeiteZeile(-1, "$ cd ..");
             }
 
@@ -54,24 +54,35 @@ public class Calculator {
 
     private void berechneTeil2() {
         final int MEMORY_SPACE_ALL = 70000000;
+        final int root = folders.getOrDefault((new File("/")).toString(), 0);
+        final int UNUSED_MEMORY = MEMORY_SPACE_ALL - root;
         final int MEMORY_SPACE_TOFREE = 30000000;
+        final int MIN_FREED_MEMORY = MEMORY_SPACE_TOFREE - UNUSED_MEMORY;
         final Top top = new Top();
-        top.curDeltaOfMemory=MEMORY_SPACE_ALL;
+//        top.curDeltaOfMemory = MEMORY_SPACE_TOFREE;
+//        top.freedMemoryBestFolder = MIN_FREED_MEMORY;
+
+        System.out.format("\nGesamt: %d\nRoot: %d\nUnused: %d\nNeeded: %d\nMin: %d\n",MEMORY_SPACE_ALL,root,UNUSED_MEMORY,MEMORY_SPACE_TOFREE,MIN_FREED_MEMORY);
 
         this.folders
             .keySet()
             .stream()
             .peek(key -> System.out.format("\n(1) [%s]=%d", key, folders.getOrDefault(key, 0)))
-            .filter(key -> folders.getOrDefault(key, 0) >= 8381165)
+            .filter(key -> folders.getOrDefault(key, 0) >= MIN_FREED_MEMORY)
             .peek(key -> System.out.format("\n(2) [%s]=%d", key, folders.getOrDefault(key, 0)))
             .forEach(key -> {
                 final int freedMemory = folders.getOrDefault(key, 0);
-                final int freedDelta = MEMORY_SPACE_TOFREE - freedMemory;
-                if (freedMemory > top.freedMemoryBestFolder && freedDelta < top.curDeltaOfMemory && freedDelta > -1) {
+                final int freedDelta = MEMORY_SPACE_TOFREE - UNUSED_MEMORY - freedMemory;
+                if(top.freedMemoryBestFolder==0){
+                    top.freedMemoryBestFolder=freedMemory+1;
+                }
+                if (freedMemory < top.freedMemoryBestFolder) {
                     top.freedMemoryBestFolder = freedMemory;
                     top.curDeltaOfMemory = freedDelta;
-                }else{
-                    System.out.format("\n(3) [%s] freedMemory=%d, freedDelta:=%d, bestFreedMemory=%d, bestDelta=%d", key, freedMemory,freedDelta,top.freedMemoryBestFolder,top.curDeltaOfMemory);
+                    System.out.format("\n(3-YES) [%s] freedMemory=%d, freedDelta:=%d, bestFreedMemory=%d, bestDelta=%d", key, freedMemory, freedDelta, top.freedMemoryBestFolder, top.curDeltaOfMemory);
+                }
+                else{
+                    System.out.format("\n(4-NO) [%s] freedMemory=%d, freedDelta:=%d, bestFreedMemory=%d, bestDelta=%d", key, freedMemory,freedDelta,top.freedMemoryBestFolder,top.curDeltaOfMemory);
                 }
             });
 
