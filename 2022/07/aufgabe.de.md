@@ -109,3 +109,11 @@ Löschen Sie das Verzeichnis /, was den ungenutzten Speicherplatz um 48381165 er
 Die Verzeichnisse e und a sind beide zu klein; Wenn Sie sie löschen, wird nicht genügend Speicherplatz freigegeben. Allerdings sind die Verzeichnisse d und / beide groß genug! Wählen Sie zwischen diesen den kleinsten: d, wodurch der ungenutzte Speicherplatz um 24933642 erhöht wird.
 
 Suchen Sie das kleinste Verzeichnis, das, wenn es gelöscht wird, genügend Speicherplatz auf dem Dateisystem freigeben würde, um das Update auszuführen. Wie groß ist dieses Verzeichnis insgesamt?
+
+Ihre Rätselantwort war 7068748.
+
+Beide Teile dieses Puzzles sind vollständig! Sie bieten zwei goldene Sterne: **
+
+An dieser Stelle sollten Sie zu Ihrem Adventskalender zurückkehren und ein weiteres Rätsel ausprobieren.
+
+Wenn Sie es trotzdem sehen möchten, können Sie Ihren Rätseleingang abrufen.

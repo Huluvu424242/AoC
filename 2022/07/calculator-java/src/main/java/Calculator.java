@@ -59,8 +59,6 @@ public class Calculator {
         final int MEMORY_SPACE_TOFREE = 30000000;
         final int MIN_FREED_MEMORY = MEMORY_SPACE_TOFREE - UNUSED_MEMORY;
         final Top top = new Top();
-//        top.curDeltaOfMemory = MEMORY_SPACE_TOFREE;
-//        top.freedMemoryBestFolder = MIN_FREED_MEMORY;
 
         System.out.format("\nGesamt: %d\nRoot: %d\nUnused: %d\nNeeded: %d\nMin: %d\n",MEMORY_SPACE_ALL,root,UNUSED_MEMORY,MEMORY_SPACE_TOFREE,MIN_FREED_MEMORY);
 
@@ -127,7 +125,6 @@ public class Calculator {
                 this.folders.put(this.curPath.toString(), this.folders.getOrDefault(this.curPath.toString(), 0) + size);
             }
             System.out.format("\t\t\t|\t%s=[%d]", this.curPath.toString(), folders.getOrDefault(this.curPath.toString(), 0));
-            return;
         }
     }
 }
