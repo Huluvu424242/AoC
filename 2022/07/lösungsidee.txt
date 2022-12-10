@@ -1,0 +1,22 @@
+globale variable curPath definieren, diese enthält immer den aktuellen Pfad in Form:
+```
+/x/ab/y/
+```
+endet immer auf /
+
+globale variable folders vom Typ Map<path,size>
+
+
+Daten erfassen:
+
+* File zeilenweise lesen und auswerten der Kommandos
+```
+$ cd /  -> curPath = /
+$ cd ..  -> curPath = curPath.substring(0,beforeLast(/))
+$ cd <folder>  -> curPath = curPath + folder + "/"
+$ ls -> ignorieren
+dir <folder> -> ignorieren
+<size> b.txt  -> folders.put(curPath, folders.getDefault(curPath,0) + size)
+```
+
+sumFolderSize=dirs.stream.filter(size<=100000).sum();
