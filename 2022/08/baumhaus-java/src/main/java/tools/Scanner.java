@@ -7,13 +7,20 @@ import java.nio.file.Path;
 
 public class Scanner {
 
+    public static class Antwort{
+        public String teil1;
+        public String teil2;
+    }
+
+    final protected Antwort antwort = new Antwort();
+
     protected final Algorithmus algorithmus;
 
     public Scanner(final Algorithmus algorithmus) {
         this.algorithmus = algorithmus;
     }
 
-    public void erfasseDaten(final Path inputPath) {
+    public Antwort erfasseDaten(final Path inputPath) {
         try (java.util.Scanner scanner = new java.util.Scanner(inputPath.toFile())) {
             int lineNr = 1;
             while (scanner.hasNext()) {
@@ -27,7 +34,9 @@ public class Scanner {
         } catch (FileNotFoundException fnfe) {
             fnfe.printStackTrace();
         }
-        algorithmus.berechneTeil1();
-        algorithmus.berechneTeil2();
+        antwort.teil1 =algorithmus.berechneTeil1();
+        antwort.teil2 =algorithmus.berechneTeil2();
+
+        return antwort;
     }
 }

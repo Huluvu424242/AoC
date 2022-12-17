@@ -6,8 +6,8 @@ public abstract class AlgorithmusAPI {
 
     abstract public void zeilenNachbearbeitung();
 
-    abstract public void berechneTeil1();
+    abstract public String berechneTeil1();
 
-    abstract public void berechneTeil2();
+    abstract public String berechneTeil2();
 
 }

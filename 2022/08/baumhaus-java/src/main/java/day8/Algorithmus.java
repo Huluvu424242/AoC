@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class Algorithmus extends AlgorithmusAPI {
 
-    final List<List<Integer>> schonung = new ArrayList<List<Integer>>();
+    final List<List<Integer>> schonung = new ArrayList<>();
     int lastLineNr = 0;
 
     final Set<String> sichtbareBaeume = new HashSet<>();
@@ -36,14 +36,14 @@ public class Algorithmus extends AlgorithmusAPI {
             .forEach(zeile -> zeile.forEach(value -> System.out.format("%d", value)));
     }
 
-    public void berechneTeil1() {
+    public String berechneTeil1() {
         for (int zeileNr = 1; zeileNr <= lastLineNr; zeileNr++) {
             final List<Integer> zeile = schonung.get(zeileNr);
             for (int spalteNr = 1; spalteNr <= zeile.size(); spalteNr++) {
                 pruefeSichtbarkeit(zeileNr, spalteNr, zeile);
             }
         }
-        System.out.format("\n%d Bäume sichtbar.\n\n", sichtbareBaeume.size());
+        return String.format("%d Bäume sichtbar.", sichtbareBaeume.size());
     }
 
 
@@ -109,8 +109,8 @@ public class Algorithmus extends AlgorithmusAPI {
         }
     }
 
-    public void berechneTeil2() {
-
+    public String berechneTeil2() {
+        return "";
     }
 
 
