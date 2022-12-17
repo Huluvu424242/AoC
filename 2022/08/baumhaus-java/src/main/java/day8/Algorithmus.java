@@ -83,6 +83,30 @@ public class Algorithmus extends AlgorithmusAPI {
                 return;
             }
         }
+        // von oben sichtbar
+        for (int i = zeilenNr-1; i >0 ; i--) {
+            final List<Integer> obereZeile = schonung.get(i);
+            final int obereHoehe = obereZeile.get(spaltenNr-1);
+            if(obereHoehe>=baumHoehe){
+                break; // von oben nicht sichtbar
+            }else if( i == 1 ){
+                // oberen Rand erreicht -> sichtbar von oben
+                sichtbareBaeume.add(String.format("%d,%d",zeilenNr,spaltenNr));
+                return;
+            }
+        }
+        // von unten sichtbar
+        for (int i = zeilenNr+1; i <=lastLineNr ; i++) {
+            final List<Integer> untereZeile = schonung.get(i);
+            final int untereHoehe = untereZeile.get(spaltenNr-1);
+            if(untereHoehe>=baumHoehe){
+                break; // von unten nicht sichtbar
+            }else if( i == lastLineNr){
+                // unteren Rand erreicht -> sichtbar von unten
+                sichtbareBaeume.add(String.format("%d,%d",zeilenNr,spaltenNr));
+                return;
+            }
+        }
     }
 
     public void berechneTeil2() {
