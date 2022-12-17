@@ -15,7 +15,11 @@ public class Test {
         }else{
             System.out.format("\n\nDie Antwort ist FALSCH und lautet\n\n%s\n",antwort.teil1);
         }
-        System.out.format("Antwort Teil 2 Demo-Input: %s",antwort.teil2);
+        if( antwort.teil2.equals("Der höchste Score ist 8.")){
+            System.out.format("\n\nDie Antwort ist RICHTIG und lautet\n\n%s\n",antwort.teil2);
+        }else{
+            System.out.format("\n\nDie Antwort ist FALSCH und lautet\n\n%s\n",antwort.teil2);
+        }
     }
     protected static void testFullInput(){
         final Main main = new Main();
@@ -25,6 +29,10 @@ public class Test {
         }else{
             System.out.format("\n\nDie Antwort ist FALSCH und lautet\n\n%s\n",antwort.teil1);
         }
-        System.out.format("Antwort Teil 2 Full Input: %s",antwort.teil2);
+        if( antwort.teil2.equals("Der höchste Score ist 314820.")){
+            System.out.format("\n\nDie Antwort ist RICHTIG und lautet\n\n%s\n",antwort.teil2);
+        }else{
+            System.out.format("\n\nDie Antwort ist FALSCH und lautet\n\n%s\n",antwort.teil2);
+        }
     }
 }
