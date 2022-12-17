@@ -24,8 +24,10 @@ public class Algorithmus extends AlgorithmusAPI {
         for (char zeichen : zeile.toCharArray()) {
             line.add(((int) zeichen) - 48);
         }
-        assert schonung.size() <= lineNr;
         schonung.add(line);
+        if( schonung.size() <= lineNr){
+            throw new RuntimeException(String.format("ZeilenNr %d kleiner size %d ",lineNr,schonung.size()));
+        };
         lastLineNr = lineNr;
     }
 
