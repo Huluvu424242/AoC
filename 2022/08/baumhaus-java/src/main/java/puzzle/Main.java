@@ -7,12 +7,12 @@ import java.nio.file.Path;
 public class Main {
 
 
-    public static void main(String[] args) {
-        final Path rootPath = Path.of("2022/08/");
-        final Path inputPath = Path.of(rootPath.toString(), "input.txt");
-        System.out.format("Path: %s", inputPath.toAbsolutePath());
-        final Scanner baumhaus = new Scanner();
-        baumhaus.erfasseDaten(inputPath);
+    public static void loese(final String folderName, final String inputFileName ) {
+        final Path rootPath = Path.of(folderName);
+        final Path inputPath = Path.of(rootPath.toString(), inputFileName);
+        System.out.format("\n\nPath: %s", inputPath.toAbsolutePath());
+        final Scanner scanner = new Scanner(new Algorithmus());
+        scanner.erfasseDaten(inputPath);
     }
 
 

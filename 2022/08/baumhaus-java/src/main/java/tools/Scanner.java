@@ -7,10 +7,10 @@ import java.nio.file.Path;
 
 public class Scanner {
 
-    protected final Algorithmus algorithmus = new Algorithmus();
+    protected final Algorithmus algorithmus;
 
-    public Scanner() {
-
+    public Scanner(final Algorithmus algorithmus) {
+        this.algorithmus = algorithmus;
     }
 
     public void erfasseDaten(final Path inputPath) {
@@ -18,11 +18,11 @@ public class Scanner {
             int lineNr = 1;
             while (scanner.hasNext()) {
                 final String zeile = scanner.nextLine();
-                algorithmus.bearbeiteZeile(lineNr, zeile);
+                algorithmus.verarbeiteZeile(lineNr, zeile);
 
                 lineNr++;
             }
-            algorithmus.bearbeiteZeileNach();
+            algorithmus.zeilenNachbearbeitung();
 
         } catch (FileNotFoundException fnfe) {
             fnfe.printStackTrace();
