@@ -72,6 +72,17 @@ public class Algorithmus extends AlgorithmusAPI {
                 return;
             }
         }
+        // von links sichtbar
+        for (int i = spaltenNr-1; i >0 ; i--) {
+            final int linkeHoehe = zeile.get(i-1);
+            if(linkeHoehe>=baumHoehe){
+                break; // von links nicht sichtbar
+            }else if( i == 1 ){
+                // linken Rand erreicht -> sichtbar von links
+                sichtbareBaeume.add(String.format("%d,%d",zeilenNr,spaltenNr));
+                return;
+            }
+        }
     }
 
     public void berechneTeil2() {
