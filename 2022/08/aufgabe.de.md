@@ -29,3 +29,49 @@ Alle Bäume am Rand des Gitters sind sichtbar - da sie bereits am Rand stehen, g
 Mit 16 am Rand sichtbaren Bäumen und weiteren 5 im Inneren sichtbaren Bäumen sind in dieser Anordnung insgesamt 21 Bäume sichtbar.
 
 Betrachten Sie Ihre Karte; Wie viele Bäume sind von außerhalb des Rasters sichtbar?
+
+Ihre Rätselantwort war 1789.
+
+Die erste Hälfte dieses Puzzles ist fertig! Es bietet einen goldenen Stern: *
+
+--- Zweiter Teil ---
+Zufrieden mit der Menge an verfügbarem Baumbestand müssen die Elfen nur den besten Ort für den Bau ihres Baumhauses kennen: Sie würden gerne viele Bäume sehen können.
+
+Um den Betrachtungsabstand von einem bestimmten Baum zu messen, schauen Sie von diesem Baum aus nach oben, unten, links und rechts. Halten Sie an, wenn Sie eine Kante oder den ersten Baum erreichen, der gleich hoch oder höher ist als der betrachtete Baum. (Wenn ein Baum direkt am Rand steht, ist mindestens einer seiner Betrachtungsabstände Null.)
+
+Die Elfen kümmern sich nicht um entfernte Bäume, die höher sind als die, die durch die obigen Regeln gefunden werden; Das vorgeschlagene Baumhaus hat große Traufen, um es trocken zu halten, sodass sie sowieso nicht höher als das Baumhaus sehen können.
+
+Betrachten Sie im obigen Beispiel die mittlere 5 in der zweiten Reihe:
+
+```
+30373
+25512
+65332
+33549
+35390
+```
+
+- Wenn Sie nach oben schauen, ist seine Sicht nicht blockiert; es kann 1 Baum (der Höhe 3) sehen.
+- Beim Blick nach links wird ihm sofort die Sicht versperrt; es kann nur 1 Baum (Höhe 5, direkt daneben) sehen.
+- Wenn Sie nach rechts schauen, ist die Sicht nicht blockiert; es kann 2 Bäume sehen.
+- Wenn man nach unten schaut, wird ihm schließlich die Sicht versperrt; es kann 2 Bäume sehen (einen der Höhe 3, dann den Baum der Höhe 5, der seine Sicht versperrt).
+Der landschaftliche Wert eines Baums wird ermittelt, indem seine Betrachtungsentfernung in jeder der vier Richtungen miteinander multipliziert wird. Für diesen Baum ist dies 4 (ermittelt durch Multiplizieren von 1 * 1 * 2 * 2).
+
+Sie können es aber noch besser machen: Betrachten Sie den Baum der Höhe 5 in der Mitte der vierten Reihe:
+```
+30373
+25512
+65332
+33549
+35390
+```
+
+- Beim Blick nach oben ist seine Sicht bei 2 Bäumen (durch einen anderen Baum mit einer Höhe von 5) blockiert.
+- Wenn Sie nach links schauen, ist die Sicht nicht blockiert; es kann 2 Bäume sehen.
+- Auch der Blick nach unten ist ihm nicht versperrt; es kann 1 Baum sehen.
+- Wenn man nach rechts schaut, ist seine Sicht bei 2 Bäumen (durch einen massiven Baum der Höhe 9) blockiert.
+
+
+Die landschaftliche Punktzahl dieses Baums beträgt 8 (2 * 2 * 1 * 2); Dies ist der ideale Ort für das Baumhaus.
+
+Betrachten Sie jeden Baum auf Ihrer Karte. Was ist die höchstmögliche landschaftliche Punktzahl für einen Baum?
