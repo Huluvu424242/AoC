@@ -1,6 +1,6 @@
 package tools;
 
-import puzzle.Algorithmus;
+import day8.Algorithmus;
 
 import java.io.FileNotFoundException;
 import java.nio.file.Path;

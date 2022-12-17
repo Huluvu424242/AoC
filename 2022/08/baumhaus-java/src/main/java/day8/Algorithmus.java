@@ -1,4 +1,4 @@
-package puzzle;
+package day8;
 
 import tools.AlgorithmusAPI;
 
