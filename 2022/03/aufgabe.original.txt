@@ -3,7 +3,7 @@ One Elf has the important job of loading all of the rucksacks with supplies for 
 
 Each rucksack has two large compartments. All items of a given type are meant to go into exactly one of the two compartments. The Elf that did the packing failed to follow this rule for exactly one item type per rucksack.
 
-The Elves have made a list of all of the items currently in each rucksack (your puzzle input), but they need your help finding the errors. Every item type is identified by a single lowercase or uppercase letter (that is, a and A refer to different types of items).
+The Elves have made a list of all of the items currently in each rucksack (your day8 input), but they need your help finding the errors. Every item type is identified by a single lowercase or uppercase letter (that is, a and A refer to different types of items).
 
 The list of items for each rucksack is given as characters all on a single line. A given rucksack always has the same number of items in each of its two compartments, so the first half of the characters represent items in the first compartment, while the second half of the characters represent items in the second compartment.
 
@@ -29,9 +29,9 @@ In the above example, the priority of the item type that appears in both compart
 
 Find the item type that appears in both compartments of each rucksack. What is the sum of the priorities of those item types?
 
-Your puzzle answer was 8153.
+Your day8 answer was 8153.
 
-The first half of this puzzle is complete! It provides one gold star: *
+The first half of this day8 is complete! It provides one gold star: *
 
 --- Part Two ---
 As you finish identifying the misplaced items, the Elves come to you with another issue.
@@ -58,10 +58,10 @@ Priorities for these items must still be found to organize the sticker attachmen
 
 Find the item type that corresponds to the badges of each three-Elf group. What is the sum of the priorities of those item types?
 
-Your puzzle answer was 2342.
+Your day8 answer was 2342.
 
-Both parts of this puzzle are complete! They provide two gold stars: **
+Both parts of this day8 are complete! They provide two gold stars: **
 
-At this point, you should return to your Advent calendar and try another puzzle.
+At this point, you should return to your Advent calendar and try another day8.
 
-If you still want to see it, you can get your puzzle input.
+If you still want to see it, you can get your day8 input.

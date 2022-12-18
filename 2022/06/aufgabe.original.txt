@@ -11,7 +11,7 @@ To be able to communicate with the Elves, the device needs to lock on to their s
 
 To fix the communication system, you need to add a subroutine to the device that detects a start-of-packet marker in the datastream. In the protocol being used by the Elves, the start of a packet is indicated by a sequence of four characters that are all different.
 
-The device will send your subroutine a datastream buffer (your puzzle input); your subroutine needs to identify the first position where the four most recently received characters were all different. Specifically, it needs to report the number of characters from the beginning of the buffer to the end of the first such four-character marker.
+The device will send your subroutine a datastream buffer (your day8 input); your subroutine needs to identify the first position where the four most recently received characters were all different. Specifically, it needs to report the number of characters from the beginning of the buffer to the end of the first such four-character marker.
 
 For example, suppose you receive the following datastream buffer:
 
@@ -28,9 +28,9 @@ nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg: first marker after character 10
 zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw: first marker after character 11
 How many characters need to be processed before the first start-of-packet marker is detected?
 
-Your puzzle answer was 1361.
+Your day8 answer was 1361.
 
-The first half of this puzzle is complete! It provides one gold star: *
+The first half of this day8 is complete! It provides one gold star: *
 
 --- Part Two ---
 Your device's communication system is correctly detecting packets, but still isn't working. It looks like it also needs to look for messages.
@@ -46,6 +46,6 @@ nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg: first marker after character 29
 zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw: first marker after character 26
 How many characters need to be processed before the first start-of-message marker is detected?
 
-Your puzzle answer was 3263.
+Your day8 answer was 3263.
 
-Both parts of this puzzle are complete! They provide two gold stars: **
+Both parts of this day8 are complete! They provide two gold stars: **
